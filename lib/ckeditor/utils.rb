@@ -41,13 +41,13 @@ module Ckeditor
 
         case uploader_type.to_s.downcase
           when "image" then
-            options[:action] = JavascriptCode.new("EDITOR.config.filebrowserImageUploadUrl")
+            options[:action] = JavascriptCode.new("/ckeditor/pictures")
             options[:allowedExtensions] = Ckeditor.image_file_types
           when "flash" then
-            options[:action] = JavascriptCode.new("EDITOR.config.filebrowserFlashUploadUrl")
+            options[:action] = JavascriptCode.new("/ckeditor/attachment_files")
             options[:allowedExtensions] = ["swf"]
           else
-            options[:action] = JavascriptCode.new("EDITOR.config.filebrowserUploadUrl")
+            options[:action] = JavascriptCode.new("/ckeditor/attachment_files")
             options[:allowedExtensions] = Ckeditor.attachment_file_types
         end
 
